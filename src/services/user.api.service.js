@@ -4,9 +4,10 @@ let axiosInstance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/users'
 });
 
-const  getUsers = ()=> axiosInstance.get('').then(value => value);
+const  getUsers = ()=> axiosInstance.get('');
 
-const getUser = (id) => axiosInstance.get('/' + id).then(value => value.data);
+const getUser = (id) => axiosInstance.get('/' + id);
+
 
 export {getUsers,getUser};
 

@@ -3,8 +3,8 @@ export default function User({item,getUserId}) {
         <div>
             <h2>{item.id}.{item.name}
                 <button onClick={() => {
-                    getUserId(item.id);
-                    console.log(item.id)
+                    console.log(item.id);
+                   getUserId(item.id);
                 }}>show posts</button></h2>
 
         </div>
