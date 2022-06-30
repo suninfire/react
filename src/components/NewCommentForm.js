@@ -15,7 +15,7 @@ export default function NewCommentForm() {
 
     return (
         <div>
-            <h4>Create Post</h4>
+            <h4>Create Comments</h4>
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name",{required:true})}/>
