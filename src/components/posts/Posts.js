@@ -1,15 +1,4 @@
-import {useEffect, useState} from "react";
-
-import {getPostComments} from "../../services";
-
-export default function Posts() {
-
-    let [comments,setComments] = useState([]);
-
-    useEffect((id) => {
-        getPostComments(id).then(({data}) => setComments([...data]));
-
-    }, []);
+export default function Posts({comments}) {
 
     return (
         <div>
