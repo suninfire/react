@@ -1,19 +1,17 @@
+import {useState} from "react";
 import {useForm} from "react-hook-form";
+
+import {getComments} from "../services/comment.api.service";
 
 export default function NewCommentForm() {
 
     let {register,handleSubmit,formState:{errors}} = useForm({defaultValues:{name:'comment name',body:'comment'}});
 
-    const onSubmit = (data) => {
+    let [comments, setComments] = useState([]);
 
-        fetch('http://jsonplaceholder.typicode.com/comments', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {'Content-type': 'application/json; charset=UTF-8'}
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-    }
+    const onSubmit = (data) => {
+        getComments(data)
+    };
 
     return (
         <div>

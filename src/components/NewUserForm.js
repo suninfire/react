@@ -1,19 +1,17 @@
+import {useState} from "react";
 import {useForm} from "react-hook-form";
+
+import {getUsers} from "../services/user.api.service"
 
 export default function NewUserForm() {
 
     let {register,handleSubmit,formState:{errors}} = useForm({defaultValues:{name:'name',username:'username'}});
 
-    const onSubmit = (data) => {
+    let [users, setUsers] = useState([]);
 
-        fetch('http://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {'Content-type': 'application/json; charset=UTF-8'}
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-    }
+    const onSubmit = (data) => {
+        getUsers(data)
+    };
 
     return (
         <div>
