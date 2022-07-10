@@ -1,16 +1,19 @@
 import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
-import {getAlbums} from "../../services/AlbumsService";
 import CommentComponent from "./CommentComponent";
 import {getComments} from "../../services/CommentsService";
 
 export default function CommentsComponent() {
 
+
+    let {id} = useParams();
+
     const [comments,setComments] = useState([]);
 
     useEffect(() => {
-      getComments().then(({data}) => setComments([...data]));
-},[]);
+        getComments(id).then(({data}) => setComments([...data]));
+    },[id]);
 
     return (
         <div>
