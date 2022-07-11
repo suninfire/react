@@ -17,7 +17,7 @@ class Posts extends Component {
     render() {
         return (<div>
             <h2>POSTS</h2>
-            {this.state.posts.map(value => <Post key={value.id} item={value}></Post>)}
+            {this.state.posts.map(value => <Post key={value.id} item={value}/>)}
         </div>);
     }
 }

@@ -13,11 +13,11 @@ class Comments extends Component {
 
         this.commentsApiService.getComments().then(value => this.setState({comments: value}));
     }
-    
+
     render() {
         return (<div>
             <h2>COMMENTS</h2>
-            {this.state.comments.map(value => <Comment key={value.id} item={value}></Comment>)}
+            {this.state.comments.map(value => <Comment key={value.id} item={value}/>)}
         </div>);
     }
 }
