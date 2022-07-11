@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 import PostComponent from "./PostComponent";
-import {getPosts} from "../../services/PostsService";
+import {getPosts} from "../../services";
 
 export default function PostsComponent() {
 

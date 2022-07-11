@@ -1,9 +1,7 @@
-import axios from 'axios';
+import {axiosService} from "./axios.service";
+import {urls} from "./urls";
 
-let axiosInstance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/posts'
-});
 
-const  getPosts = ()=> axiosInstance.get('').then(value => value);
+const  getPosts = ()=> axiosService.get(urls.posts).then(value => value);
 
 export {getPosts};

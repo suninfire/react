@@ -1,9 +1,6 @@
-import axios from 'axios';
+import {axiosService} from "./axios.service";
+import {urls} from "./urls";
 
-let axiosInstance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/albums'
-});
-
-const  getAlbums = ()=> axiosInstance.get('').then(value => value);
+const  getAlbums = ()=> axiosService.get(urls.albums).then(value => value);
 
 export {getAlbums};

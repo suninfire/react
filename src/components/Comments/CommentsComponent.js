@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
 import CommentComponent from "./CommentComponent";
-import {getComments} from "../../services/CommentsService";
+import {getComments} from "../../services";
 
 export default function CommentsComponent() {
 

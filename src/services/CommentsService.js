@@ -1,10 +1,6 @@
-import axios from 'axios';
-
-let axiosInstance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com'
-});
+import {axiosService} from "./axios.service";
 
 
-const  getComments = (id)=> axiosInstance.get('/posts/' + id + '/comments' ).then(value => value);
+const  getComments = (id)=> axiosService.get('/posts/' + id + '/comments' ).then(value => value);
 
 export {getComments};
